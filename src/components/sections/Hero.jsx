@@ -1,9 +1,10 @@
 import { motion } from 'framer-motion'
-import { ArrowRight, Star, Users, Heart, Shield } from 'lucide-react'
+import { Users, Heart, Shield } from 'lucide-react'
 import { useStore } from '../../store/useStore'
+import HeroImage from '../../assets/img/logo.png'
 
 const Hero = () => {
-  const { clubInfo } = useStore()
+  const { clubInfo, setCurrentSection, toggleMenu } = useStore()
 
   const features = [
     {
@@ -19,7 +20,7 @@ const Hero = () => {
     {
       icon: Shield,
       title: 'Productos de Calidad',
-      description: 'Herbalife con respaldo científico'
+      description: 'Variedad de productos nutricionales'
     }
   ]
 
@@ -45,13 +46,30 @@ const Hero = () => {
       }
     }
   }
+  const handleNavClick = (sectionId) => {
+    setCurrentSection(sectionId)
+    toggleMenu()
+
+    setTimeout(() => {
+      const element = document.getElementById(sectionId)
+      if (element) {
+        const headerHeight = 80
+        const elementPosition = element.offsetTop - headerHeight
+
+        window.scrollTo({
+          top: elementPosition,
+          behavior: 'smooth'
+        })
+      }
+    }, 100)
+  }
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center bg-gradient-to-br from-primary-50 via-white to-accent-50 overflow-hidden">
+    <section id="home" className="relative min-h-screen flex items-center bg-gradient-to-br from-secondary-50 via-white to-primary-50 overflow-hidden pt-16 md:pt-20 w-full">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-primary-200 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-accent-200 rounded-full blur-3xl"></div>
+        <div className="absolute top-20 left-2 w-32 h-32 sm:w-48 sm:h-48 bg-primary-200 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 right-2 w-40 h-40 sm:w-56 sm:h-56 bg-accent-200 rounded-full blur-3xl"></div>
       </div>
 
       <div className="container-custom relative z-10">
@@ -59,49 +77,41 @@ const Hero = () => {
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          className="grid lg:grid-cols-2 gap-12 items-center"
+          className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12 items-center"
         >
           {/* Content */}
           <div className="text-center lg:text-left">
-            <motion.div
-              variants={itemVariants}
-              className="inline-flex items-center space-x-2 bg-primary-100 text-primary-700 px-4 py-2 rounded-full text-sm font-medium mb-6"
-            >
-              <Star className="w-4 h-4 fill-current" />
-              <span>Transformando vidas desde 2024</span>
-            </motion.div>
 
             <motion.h1
               variants={itemVariants}
-              className="text-4xl md:text-6xl lg:text-7xl font-bold text-secondary-800 mb-6 leading-tight"
+              className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold text-secondary-800 mb-4 md:mb-6 leading-tight break-words"
             >
               {clubInfo.name}
             </motion.h1>
 
             <motion.p
               variants={itemVariants}
-              className="text-xl text-secondary-600 mb-8 max-w-2xl"
+              className="text-lg md:text-xl text-secondary-600 mb-6 md:mb-8 max-w-2xl mx-auto lg:mx-0"
             >
               {clubInfo.description}
             </motion.p>
 
             <motion.div
               variants={itemVariants}
-              className="flex flex-col sm:flex-row gap-4 mb-12"
+              className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-8 md:mb-12"
             >
-              <button className="btn-primary group">
-                Descubre Más
-                <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+              <button className="btn-primary group" onClick={() => handleNavClick('contact')}>
+                Únete ahora
               </button>
-              <button className="btn-secondary">
-                Ver Productos
+              <button className="btn-secondary" onClick={() => handleNavClick('about')}>
+                Descubre más
               </button>
             </motion.div>
 
             {/* Features */}
             <motion.div
               variants={itemVariants}
-              className="grid grid-cols-1 sm:grid-cols-3 gap-6"
+              className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6"
             >
               {features.map((feature, index) => (
                 <motion.div
@@ -130,48 +140,13 @@ const Hero = () => {
               {/* Placeholder para imagen principal */}
               <div className="w-full h-96 lg:h-[500px] bg-gradient-to-br from-primary-200 to-accent-200 rounded-2xl flex items-center justify-center">
                 <div className="text-center">
-                  <Heart className="w-24 h-24 text-primary-600 mx-auto mb-4" />
-                  <p className="text-lg font-semibold text-secondary-700">
-                    Imagen Principal
-                  </p>
-                  <p className="text-sm text-secondary-600">
-                    Aquí irá la imagen principal del club
-                  </p>
+                  <img src={HeroImage} alt="Hero Image" className="w-full h-full" />
                 </div>
               </div>
 
               {/* Floating Cards */}
-              <motion.div
-                animate={{ y: [0, -10, 0] }}
-                transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
-                className="absolute -top-4 -right-4 bg-white p-4 rounded-xl shadow-lg border border-secondary-200"
-              >
-                <div className="flex items-center space-x-3">
-                  <div className="w-10 h-10 bg-accent-100 rounded-full flex items-center justify-center">
-                    <Users className="w-5 h-5 text-accent-600" />
-                  </div>
-                  <div>
-                    <p className="font-semibold text-secondary-800">500+</p>
-                    <p className="text-xs text-secondary-600">Miembros</p>
-                  </div>
-                </div>
-              </motion.div>
+              
 
-              <motion.div
-                animate={{ y: [0, 10, 0] }}
-                transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
-                className="absolute -bottom-4 -left-4 bg-white p-4 rounded-xl shadow-lg border border-secondary-200"
-              >
-                <div className="flex items-center space-x-3">
-                  <div className="w-10 h-10 bg-primary-100 rounded-full flex items-center justify-center">
-                    <Star className="w-5 h-5 text-primary-600 fill-current" />
-                  </div>
-                  <div>
-                    <p className="font-semibold text-secondary-800">4.9/5</p>
-                    <p className="text-xs text-secondary-600">Calificación</p>
-                  </div>
-                </div>
-              </motion.div>
             </div>
           </motion.div>
         </motion.div>

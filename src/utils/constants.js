@@ -103,7 +103,7 @@ export const BREAKPOINTS = {
 
 // Configuración de la aplicación
 export const APP_CONFIG = {
-  name: 'Club Integral Herbalife',
+  name: 'Club De Enfoque Integral',
   description: 'Transformando vidas a través del bienestar integral: cuerpo, mente y espíritu',
   version: '1.0.0',
   author: 'Club Integral Team',

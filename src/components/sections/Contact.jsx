@@ -10,15 +10,15 @@ const Contact = () => {
     email: '',
     phone: '',
     message: '',
-    interest: 'products'
   })
 
   const handleSubmit = async (e) => {
+    debugger
     e.preventDefault()
     const result = await submitContactForm(formData)
     if (result.success) {
       alert('¡Mensaje enviado correctamente! Te contactaremos pronto.')
-      setFormData({ name: '', email: '', phone: '', message: '', interest: 'products' })
+      setFormData({ name: '', email: '', phone: '', message: '' })
     } else {
       alert('Error al enviar el mensaje. Por favor, inténtalo de nuevo.')
     }
@@ -35,26 +35,26 @@ const Contact = () => {
     {
       icon: Phone,
       title: 'Teléfono',
-      value: '+1 (555) 123-4567',
-      description: 'Lunes a Viernes 9:00 - 18:00'
+      value: '+57 315 995 82 79',
+      description: ''
     },
     {
       icon: Mail,
       title: 'Email',
-      value: 'info@clubintegral.com',
+      value: 'clubdeenfoqueintegral@gmail.com',
       description: 'Respuesta en 24 horas'
     },
     {
       icon: MapPin,
       title: 'Ubicación',
-      value: 'Ciudad, País',
-      description: 'Visítanos en nuestras instalaciones'
+      value: 'Barrio Cristóbal, Medellín',
+      description: 'Calle 36 #88-30 APTO 203'
     },
     {
       icon: Clock,
       title: 'Horarios',
-      value: 'Lun - Vie: 9:00 - 18:00',
-      description: 'Sáb: 9:00 - 14:00'
+      value: 'Lun - Sab: 8:00am - 12:00pm y 1:00pm - 6:00pm',
+      description: 'Domicilios en jornada contínua.'
     }
   ]
 
@@ -67,7 +67,7 @@ const Contact = () => {
     {
       icon: Users,
       title: 'Consultoría Nutricional',
-      description: 'Planes personalizados con productos Herbalife'
+      description: 'Planes personalizados'
     },
     {
       icon: BookOpen,
@@ -118,7 +118,7 @@ const Contact = () => {
 
           <motion.h2
             variants={itemVariants}
-            className="text-4xl md:text-5xl font-bold text-secondary-800 mb-6"
+            className="text-3xl sm:text-4xl md:text-5xl font-bold text-secondary-800 mb-4 md:mb-6"
           >
             Estamos Aquí para
             <span className="text-primary-600"> Ayudarte</span>
@@ -126,28 +126,28 @@ const Contact = () => {
 
           <motion.p
             variants={itemVariants}
-            className="text-xl text-secondary-600 max-w-3xl mx-auto"
+            className="text-lg md:text-xl text-secondary-600 max-w-3xl mx-auto"
           >
-            ¿Tienes preguntas sobre nuestros productos o servicios? ¿Necesitas asesoría espiritual? 
+            ¿Tienes preguntas sobre nuestros productos o servicios? ¿Necesitas asesoría espiritual?
             Estamos aquí para acompañarte en tu camino hacia el bienestar integral.
           </motion.p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12">
           {/* Contact Form */}
           <motion.div
             variants={itemVariants}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.3 }}
-            className="bg-white p-8 rounded-2xl shadow-lg border border-secondary-100"
+            className="bg-white p-4 sm:p-6 lg:p-8 rounded-2xl shadow-lg border border-secondary-100"
           >
             <h3 className="text-2xl font-bold text-secondary-800 mb-6">
               Envíanos un Mensaje
             </h3>
 
             <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid md:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-6">
                 <div>
                   <label className="block text-sm font-medium text-secondary-700 mb-2">
                     Nombre Completo *
@@ -203,7 +203,6 @@ const Contact = () => {
                   onChange={handleChange}
                   className="w-full px-4 py-3 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200"
                 >
-                  <option value="products">Información sobre Productos</option>
                   <option value="spiritual">Asesoría Espiritual</option>
                   <option value="nutrition">Consultoría Nutricional</option>
                   <option value="community">Unirse al Club</option>
@@ -254,22 +253,22 @@ const Contact = () => {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.3 }}
-              className="bg-white p-8 rounded-2xl shadow-lg border border-secondary-100"
+              className="bg-white p-4 sm:p-6 lg:p-8 rounded-2xl shadow-lg border border-secondary-100"
             >
-              <h3 className="text-2xl font-bold text-secondary-800 mb-6">
+              <h3 className="text-xl sm:text-2xl font-bold text-secondary-800 mb-4 sm:mb-6">
                 Información de Contacto
               </h3>
 
-              <div className="space-y-6">
+              <div className="space-y-4 sm:space-y-6">
                 {contactInfo.map((info, index) => (
-                  <div key={index} className="flex items-start space-x-4">
-                    <div className="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                      <info.icon className="w-6 h-6 text-primary-600" />
+                  <div key={index} className="flex items-start space-x-3 sm:space-x-4">
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 bg-primary-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <info.icon className="w-5 h-5 sm:w-6 sm:h-6 text-primary-600" />
                     </div>
-                    <div>
-                      <h4 className="font-semibold text-secondary-800">{info.title}</h4>
-                      <p className="text-primary-600 font-medium">{info.value}</p>
-                      <p className="text-sm text-secondary-600">{info.description}</p>
+                    <div className="min-w-0 flex-1">
+                      <h4 className="font-semibold text-secondary-800 text-sm sm:text-base">{info.title}</h4>
+                      <p className="text-primary-600 font-medium text-sm sm:text-base break-words">{info.value}</p>
+                      <p className="text-xs sm:text-sm text-secondary-600">{info.description}</p>
                     </div>
                   </div>
                 ))}
@@ -282,21 +281,21 @@ const Contact = () => {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.3 }}
-              className="bg-white p-8 rounded-2xl shadow-lg border border-secondary-100"
+              className="bg-white p-4 sm:p-6 lg:p-8 rounded-2xl shadow-lg border border-secondary-100"
             >
-              <h3 className="text-2xl font-bold text-secondary-800 mb-6">
+              <h3 className="text-xl sm:text-2xl font-bold text-secondary-800 mb-4 sm:mb-6">
                 Nuestros Servicios
               </h3>
 
-              <div className="space-y-4">
+              <div className="space-y-3 sm:space-y-4">
                 {services.map((service, index) => (
-                  <div key={index} className="flex items-start space-x-4">
-                    <div className="w-10 h-10 bg-accent-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                      <service.icon className="w-5 h-5 text-accent-600" />
+                  <div key={index} className="flex items-start space-x-3 sm:space-x-4">
+                    <div className="w-8 h-8 sm:w-10 sm:h-10 bg-accent-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <service.icon className="w-4 h-4 sm:w-5 sm:h-5 text-accent-600" />
                     </div>
-                    <div>
-                      <h4 className="font-semibold text-secondary-800">{service.title}</h4>
-                      <p className="text-sm text-secondary-600">{service.description}</p>
+                    <div className="min-w-0 flex-1">
+                      <h4 className="font-semibold text-secondary-800 text-sm sm:text-base">{service.title}</h4>
+                      <p className="text-xs sm:text-sm text-secondary-600">{service.description}</p>
                     </div>
                   </div>
                 ))}
@@ -320,12 +319,12 @@ const Contact = () => {
             No esperes más. Tu bienestar integral está a una llamada de distancia.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="btn-primary">
+            <a className="btn-primary" href="tel:+573159958279">
               Llamar Ahora
-            </button>
-            <button className="btn-secondary">
+            </a>
+            <a className="btn-secondary" href="https://wa.me/573159958279">
               WhatsApp
-            </button>
+            </a>
           </div>
         </motion.div>
       </div>

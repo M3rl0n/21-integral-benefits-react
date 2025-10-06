@@ -1,3 +1,5 @@
+@import './assets/fonts/fonts.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -8,13 +10,14 @@
   }
   
   body {
-    font-family: 'Inter', system-ui, sans-serif;
+    font-family: '29LT Riwaya', 'Inter', system-ui, sans-serif;
     color: #1e293b;
     background-color: #ffffff;
+    overflow-x: hidden;
   }
   
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Scripter', 'Playfair Display', serif;
   }
 }
 
@@ -36,7 +39,7 @@
   }
   
   .container-custom {
-    @apply max-w-7xl mx-auto;
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
   }
   
   .text-primary {
@@ -61,5 +64,24 @@
   
   .bg-accent {
     @apply bg-accent-500;
+  }
+  
+  /* Clases de fuentes personalizadas */
+  .font-scripter {
+    font-family: 'Scripter', serif;
+  }
+  
+  .font-riwaya {
+    font-family: '29LT Riwaya', sans-serif;
+  }
+  
+  /* Títulos con Scripter */
+  .title-scripter {
+    @apply font-scripter text-4xl md:text-5xl lg:text-6xl font-bold;
+  }
+  
+  /* Texto con Riwaya */
+  .text-riwaya {
+    @apply font-riwaya text-base md:text-lg;
   }
 }

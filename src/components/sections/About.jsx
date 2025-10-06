@@ -10,13 +10,13 @@ const About = () => {
       icon: Heart,
       title: 'Amor',
       description: 'Amamos a Dios y a nuestro prójimo, sirviendo con compasión y dedicación.',
-      color: 'text-red-500'
+      color: 'text-secondary-500'
     },
     {
       icon: Users,
       title: 'Comunidad',
       description: 'Construimos una familia donde cada miembro es valorado y apoyado.',
-      color: 'text-blue-500'
+      color: 'text-primary-600'
     },
     {
       icon: Target,
@@ -28,15 +28,8 @@ const About = () => {
       icon: Shield,
       title: 'Integridad',
       description: 'Actuamos con honestidad y transparencia en todas nuestras relaciones.',
-      color: 'text-purple-500'
+      color: 'text-spiritual-500'
     }
-  ]
-
-  const stats = [
-    { number: '500+', label: 'Miembros Activos' },
-    { number: '3', label: 'Años de Experiencia' },
-    { number: '95%', label: 'Satisfacción' },
-    { number: '24/7', label: 'Soporte Espiritual' }
   ]
 
   const containerVariants = {
@@ -81,7 +74,7 @@ const About = () => {
 
           <motion.h2
             variants={itemVariants}
-            className="text-4xl md:text-5xl font-bold text-secondary-800 mb-6"
+            className="text-3xl sm:text-4xl md:text-5xl font-bold text-secondary-800 mb-4 md:mb-6"
           >
             Transformando Vidas a Través del
             <span className="text-primary-600"> Bienestar Integral</span>
@@ -89,7 +82,7 @@ const About = () => {
 
           <motion.p
             variants={itemVariants}
-            className="text-xl text-secondary-600 max-w-3xl mx-auto"
+            className="text-lg md:text-xl text-secondary-600 max-w-3xl mx-auto"
           >
             {clubInfo.mission}
           </motion.p>
@@ -149,7 +142,7 @@ const About = () => {
             Nuestros Valores
           </motion.h3>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
             {values.map((value, index) => (
               <motion.div
                 key={index}
@@ -171,65 +164,6 @@ const About = () => {
           </div>
         </motion.div>
 
-        {/* Stats */}
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
-          className="bg-gradient-to-r from-primary-600 to-accent-600 rounded-2xl p-12 text-white"
-        >
-          <motion.h3
-            variants={itemVariants}
-            className="text-3xl font-bold text-center mb-12"
-          >
-            Nuestro Impacto
-          </motion.h3>
-
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {stats.map((stat, index) => (
-              <motion.div
-                key={index}
-                variants={itemVariants}
-                className="text-center"
-              >
-                <motion.div
-                  initial={{ scale: 0 }}
-                  whileInView={{ scale: 1 }}
-                  transition={{ delay: index * 0.1, duration: 0.5 }}
-                  className="text-4xl md:text-5xl font-bold mb-2"
-                >
-                  {stat.number}
-                </motion.div>
-                <p className="text-lg opacity-90">{stat.label}</p>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
-
-        {/* Call to Action */}
-        <motion.div
-          variants={itemVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
-          className="text-center mt-16"
-        >
-          <h3 className="text-3xl font-bold text-secondary-800 mb-6">
-            ¿Listo para tu Transformación?
-          </h3>
-          <p className="text-xl text-secondary-600 mb-8 max-w-2xl mx-auto">
-            Únete a nuestra comunidad y descubre cómo el bienestar integral puede transformar tu vida.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="btn-primary">
-              Únete Ahora
-            </button>
-            <button className="btn-secondary">
-              Conoce Más
-            </button>
-          </div>
-        </motion.div>
       </div>
     </section>
   )

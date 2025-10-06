@@ -1,0 +1,39 @@
+/* Fuentes personalizadas para Club Enfoque Integral */
+
+/* SCRIPTER - Para títulos */
+@font-face {
+  font-family: 'Scripter';
+  src: url('./Scripter-Regular.woff2') format('woff2'),
+       url('./Scripter-Regular.woff') format('woff'),
+       url('./Scripter-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* 29LT Riwaya - Para texto general */
+@font-face {
+  font-family: '29LT Riwaya';
+  src: url('./29lt-riwaya-regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+/* 29LT Riwaya - Peso medio */
+@font-face {
+  font-family: '29LT Riwaya';
+  src: url('./29lt-riwaya-regular.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* 29LT Riwaya - Peso semibold */
+@font-face {
+  font-family: '29LT Riwaya';
+  src: url('./29lt-riwaya-regular.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+

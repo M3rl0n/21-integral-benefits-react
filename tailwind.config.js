@@ -7,57 +7,57 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Verde Herbalife - Representa vida, salud y crecimiento
+        // Verde natural - Representa vida, salud, crecimiento y naturaleza
         primary: {
-          50: '#f0fdf4',
-          100: '#dcfce7',
-          200: '#bbf7d0',
-          300: '#86efac',
-          400: '#4ade80',
-          500: '#22c55e', // Verde principal Herbalife
-          600: '#16a34a',
-          700: '#15803d',
-          800: '#166534',
-          900: '#14532d',
+          50: '#f7faf4',
+          100: '#ecf4e3',
+          200: '#d9e9c8',
+          300: '#bdd7a1',
+          400: '#98c272',
+          500: '#6f9d37', // Verde principal del club
+          600: '#5c8129',
+          700: '#486622',
+          800: '#3a5220',
+          900: '#2d3f18',
         },
-        // Azul espiritual - Representa paz, fe y sabiduría
+        // Rosa suave - Representa amor, compasión, cuidado y bienestar emocional
         secondary: {
-          50: '#eff6ff',
-          100: '#dbeafe',
-          200: '#bfdbfe',
-          300: '#93c5fd',
-          400: '#60a5fa',
-          500: '#3b82f6',
-          600: '#2563eb', // Azul para elementos espirituales
-          700: '#1d4ed8',
-          800: '#1e40af',
-          900: '#1e3a8a',
+          50: '#fef8f9',
+          100: '#fef0f2',
+          200: '#fde2e7',
+          300: '#fbc8d2',
+          400: '#f6a1b1',
+          500: '#f4b2bb', // Rosa principal del club
+          600: '#e287a0',
+          700: '#c8637f',
+          800: '#a54b69',
+          900: '#8a3f5a',
         },
-        // Dorado/Naranja - Representa energía, vitalidad y propósito
+        // Verde oliva - Para elementos de sabiduría y estabilidad espiritual
         accent: {
-          50: '#fff7ed',
-          100: '#ffedd5',
-          200: '#fed7aa',
-          300: '#fdba74',
-          400: '#fb923c',
-          500: '#f97316', // Naranja energético
-          600: '#ea580c',
-          700: '#c2410c',
-          800: '#9a3412',
-          900: '#7c2d12',
+          50: '#f8faf5',
+          100: '#f0f4e8',
+          200: '#e1e9d1',
+          300: '#c9d7b0',
+          400: '#adc189',
+          500: '#8fa662', // Verde oliva complementario
+          600: '#748c4e',
+          700: '#5d7040',
+          800: '#4b5a35',
+          900: '#3e4a2e',
         },
-        // Púrpura para elementos espirituales y transformación
+        // Rosa tierra - Para elementos de transformación personal
         spiritual: {
-          50: '#faf5ff',
-          100: '#f3e8ff',
-          200: '#e9d5ff',
-          300: '#d8b4fe',
-          400: '#c084fc',
-          500: '#a855f7',
-          600: '#9333ea', // Púrpura espiritual
-          700: '#7c3aed',
-          800: '#6b21a8',
-          900: '#581c87',
+          50: '#fdf8f7',
+          100: '#fbf0ee',
+          200: '#f5ded9',
+          300: '#ecc4bb',
+          400: '#dfa194',
+          500: '#d07d6d', // Rosa tierra espiritual
+          600: '#ba5f4e',
+          700: '#9d4d40',
+          800: '#824139',
+          900: '#6c3835',
         },
         // Grises neutros para balance
         neutral: {
@@ -74,9 +74,11 @@ export default {
         }
       },
       fontFamily: {
-        'sans': ['Inter', 'system-ui', 'sans-serif'],
-        'serif': ['Playfair Display', 'serif'],
+        'sans': ['29LT Riwaya', 'Inter', 'system-ui', 'sans-serif'],
+        'serif': ['Scripter', 'Playfair Display', 'serif'],
         'mono': ['JetBrains Mono', 'monospace'],
+        'scripter': ['Scripter', 'serif'],
+        'riwaya': ['29LT Riwaya', 'sans-serif'],
       },
       animation: {
         'fade-in': 'fadeIn 0.5s ease-in-out',

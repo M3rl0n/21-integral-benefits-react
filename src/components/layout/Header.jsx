@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X, Heart, Users } from 'lucide-react'
 import { useStore } from '../../store/useStore'
-import Logo from '../../assets/img/Logo.png'
+import Logo from '../../assets/img/logo.png'
 
 const Header = () => {
   const { isMenuOpen, toggleMenu, setCurrentSection, currentSection } = useStore()

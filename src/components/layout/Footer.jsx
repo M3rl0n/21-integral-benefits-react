@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { Heart, Mail, Phone, MapPin, Facebook, Instagram, Youtube, Twitter } from 'lucide-react'
+import { Heart, Mail, Phone, MapPin, Instagram } from 'lucide-react'
 import { useStore } from '../../store/useStore'
 
 const Footer = () => {
@@ -17,19 +17,10 @@ const Footer = () => {
       { name: 'Sesiones Grupales', href: '#contact' },
       { name: 'Acompañamiento', href: '#contact' }
     ],
-    support: [
-      { name: 'Preguntas Frecuentes', href: '#' },
-      { name: 'Soporte Técnico', href: '#' },
-      { name: 'Política de Privacidad', href: '#' },
-      { name: 'Términos y Condiciones', href: '#' }
-    ]
   }
 
   const socialLinks = [
-    { name: 'Facebook', icon: Facebook, href: '#', color: 'hover:text-primary-600' },
     { name: 'Instagram', icon: Instagram, href: '#', color: 'hover:text-secondary-500' },
-    { name: 'YouTube', icon: Youtube, href: '#', color: 'hover:text-spiritual-500' },
-    { name: 'Twitter', icon: Twitter, href: '#', color: 'hover:text-accent-500' }
   ]
 
   const containerVariants = {
@@ -84,15 +75,15 @@ const Footer = () => {
               <div className="space-y-3">
                 <div className="flex items-center space-x-3 text-secondary-300">
                   <Mail className="w-5 h-5" />
-                  <span>info@clubintegral.com</span>
+                  <span>clubdeenfoqueintegral@gmail.com</span>
                 </div>
                 <div className="flex items-center space-x-3 text-secondary-300">
                   <Phone className="w-5 h-5" />
-                  <span>+1 (555) 123-4567</span>
+                  <span>+57 315 995 82 79</span>
                 </div>
                 <div className="flex items-center space-x-3 text-secondary-300">
                   <MapPin className="w-5 h-5" />
-                  <span>Ciudad, País</span>
+                  <span>Barrio Cristóbal, Medellín</span>
                 </div>
               </div>
             </motion.div>
@@ -132,35 +123,6 @@ const Footer = () => {
           </div>
         </motion.div>
 
-        {/* Newsletter Section */}
-        <motion.div
-          variants={itemVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
-          className="py-8 border-t border-secondary-800"
-        >
-          <div className="flex flex-col md:flex-row items-center justify-between">
-            <div className="mb-6 md:mb-0">
-              <h4 className="text-xl font-semibold mb-2">Mantente Conectado</h4>
-              <p className="text-secondary-300">
-                Recibe consejos de bienestar y actualizaciones del club
-              </p>
-            </div>
-            
-            <div className="flex w-full md:w-auto">
-              <input
-                type="email"
-                placeholder="Tu email"
-                className="flex-1 md:w-80 px-4 py-3 bg-secondary-800 border border-secondary-700 rounded-l-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent text-white placeholder-secondary-400"
-              />
-              <button className="btn-primary rounded-l-none">
-                Suscribirse
-              </button>
-            </div>
-          </div>
-        </motion.div>
-
         {/* Bottom Footer */}
         <motion.div
           variants={itemVariants}
@@ -171,7 +133,7 @@ const Footer = () => {
         >
           <div className="flex flex-col md:flex-row items-center justify-between">
             <div className="text-secondary-400 text-sm mb-4 md:mb-0">
-              © 2024 {clubInfo.name}. Todos los derechos reservados.
+              © 2025 {clubInfo.name}. Todos los derechos reservados.
             </div>
 
             {/* Social Links */}
@@ -187,18 +149,6 @@ const Footer = () => {
               ))}
             </div>
 
-            {/* Legal Links */}
-            <div className="flex items-center space-x-6 text-sm">
-              {footerLinks.support.map((link, index) => (
-                <a
-                  key={index}
-                  href={link.href}
-                  className="text-secondary-400 hover:text-white transition-colors duration-200"
-                >
-                  {link.name}
-                </a>
-              ))}
-            </div>
           </div>
         </motion.div>
       </div>

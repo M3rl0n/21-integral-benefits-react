@@ -34,26 +34,26 @@ const Contact = () => {
     {
       icon: Phone,
       title: 'Teléfono',
-      value: '+1 (555) 123-4567',
-      description: 'Lunes a Viernes 9:00 - 18:00'
+      value: '+57 315 995 82 79',
+      description: ''
     },
     {
       icon: Mail,
       title: 'Email',
-      value: 'info@clubintegral.com',
+      value: 'clubdeenfoqueintegral@gmail.com',
       description: 'Respuesta en 24 horas'
     },
     {
       icon: MapPin,
       title: 'Ubicación',
-      value: 'Ciudad, País',
-      description: 'Visítanos en nuestras instalaciones'
+      value: 'Barrio Cristóbal, Medellín',
+      description: 'Calle 36 #88-30 APTO 203'
     },
     {
       icon: Clock,
       title: 'Horarios',
-      value: 'Lun - Vie: 9:00 - 18:00',
-      description: 'Sáb: 9:00 - 14:00'
+      value: 'Lun - Sab: 8:00am - 12:00pm y 1:00pm - 6:00pm',
+      description: 'Domicilios en jornada contínua.'
     }
   ]
 
@@ -127,7 +127,7 @@ const Contact = () => {
             variants={itemVariants}
             className="text-xl text-secondary-600 max-w-3xl mx-auto"
           >
-            ¿Tienes preguntas sobre nuestros productos o servicios? ¿Necesitas asesoría espiritual? 
+            ¿Tienes preguntas sobre nuestros productos o servicios? ¿Necesitas asesoría espiritual?
             Estamos aquí para acompañarte en tu camino hacia el bienestar integral.
           </motion.p>
         </motion.div>
@@ -318,12 +318,12 @@ const Contact = () => {
             No esperes más. Tu bienestar integral está a una llamada de distancia.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="btn-primary">
+            <a className="btn-primary" href="tel:+573159958279">
               Llamar Ahora
-            </button>
-            <button className="btn-secondary">
+            </a>
+            <a className="btn-secondary" href="https://wa.me/573159958279">
               WhatsApp
-            </button>
+            </a>
           </div>
         </motion.div>
       </div>

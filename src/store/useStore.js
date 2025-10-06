@@ -1,4 +1,5 @@
 import { create } from 'zustand'
+import { submitToGoogleSheets } from '../utils/googleSheets'
 
 export const useStore = create((set, get) => ({
   // Estado de la aplicación
@@ -33,12 +34,19 @@ export const useStore = create((set, get) => ({
   submitContactForm: async (formData) => {
     set({ isLoading: true })
     try {
-      // Aquí iría la lógica para enviar el formulario
       console.log('Formulario enviado:', formData)
-      // Simular delay de API
-      await new Promise(resolve => setTimeout(resolve, 1000))
-      return { success: true, message: 'Mensaje enviado correctamente' }
+      
+      // Enviar a Google Sheets
+      const sheetsResult = await submitToGoogleSheets(formData)
+      console.log('Google Sheets:', sheetsResult)
+      
+      if (sheetsResult.success) {
+        return { success: true, message: 'Mensaje enviado correctamente a Google Sheets' }
+      } else {
+        return { success: false, message: 'Error al enviar a Google Sheets' }
+      }
     } catch (error) {
+      console.error('Error al enviar formulario:', error)
       return { success: false, message: 'Error al enviar el mensaje' }
     } finally {
       set({ isLoading: false })

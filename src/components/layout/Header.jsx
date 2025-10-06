@@ -48,23 +48,23 @@ const Header = () => {
         }`}
     >
       <div className="container-custom">
-        <div className="flex items-center justify-between py-4">
+        <div className="flex items-center justify-between py-3 md:py-4 gap-4">
           {/* Logo */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.2 }}
-            className="flex items-center space-x-2"
+            className="flex items-center space-x-2 min-w-0 flex-shrink-0"
           >
             {/* Logo image */}
             {/* <img src={Logo} alt="Logo" className="w-10 h-10" /> */}
             <div>
-              <h1 className="text-xl font-bold text-secondary-800">C.E.I</h1>
+              <h1 className="text-base sm:text-lg font-bold text-secondary-800">C.E.I</h1>
             </div>
           </motion.div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
+          <nav className="hidden lg:flex items-center space-x-8">
             {navItems.map((item, index) => (
               <motion.button
                 key={item.id}
@@ -88,7 +88,7 @@ const Header = () => {
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.4 }}
-            className="hidden md:block"
+            className="hidden lg:block"
           >
             <button className="btn-primary" onClick={() => handleNavClick('contact')}>
               Únete al Club
@@ -101,7 +101,7 @@ const Header = () => {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5 }}
             onClick={toggleMenu}
-            className="md:hidden p-2 rounded-lg bg-primary-100 text-primary-700"
+            className="lg:hidden p-2 rounded-md bg-primary-100 text-primary-700 hover:bg-primary-200 transition-colors flex-shrink-0"
           >
             {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </motion.button>
@@ -116,15 +116,15 @@ const Header = () => {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="md:hidden bg-white border-t border-secondary-200"
+            className="lg:hidden bg-white border-t border-secondary-200"
           >
             <div className="container-custom py-4">
-              <nav className="flex flex-col space-y-2">
+              <nav className="flex flex-col space-y-1">
                 {navItems.map((item) => (
                   <button
                     key={item.id}
                     onClick={() => handleNavClick(item.id)}
-                    className={`flex items-center space-x-3 px-4 py-3 rounded-lg transition-all duration-200 ${currentSection === item.id
+                    className={`flex items-center space-x-3 px-4 py-4 rounded-lg transition-all duration-200 text-left w-full ${currentSection === item.id
                       ? 'bg-primary-100 text-primary-700'
                       : 'text-secondary-600 hover:text-primary-600 hover:bg-primary-50'
                       }`}

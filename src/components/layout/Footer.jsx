@@ -155,8 +155,8 @@ const Footer = () => {
 
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5 pointer-events-none">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-primary-200 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-accent-200 rounded-full blur-3xl"></div>
+        <div className="absolute top-20 left-4 w-48 h-48 sm:w-64 sm:h-64 bg-primary-200 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 right-4 w-64 h-64 sm:w-80 sm:h-80 bg-accent-200 rounded-full blur-3xl"></div>
       </div>
     </footer>
   )

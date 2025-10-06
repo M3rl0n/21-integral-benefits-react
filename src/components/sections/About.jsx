@@ -74,7 +74,7 @@ const About = () => {
 
           <motion.h2
             variants={itemVariants}
-            className="text-4xl md:text-5xl font-bold text-secondary-800 mb-6"
+            className="text-3xl sm:text-4xl md:text-5xl font-bold text-secondary-800 mb-4 md:mb-6"
           >
             Transformando Vidas a Través del
             <span className="text-primary-600"> Bienestar Integral</span>
@@ -82,7 +82,7 @@ const About = () => {
 
           <motion.p
             variants={itemVariants}
-            className="text-xl text-secondary-600 max-w-3xl mx-auto"
+            className="text-lg md:text-xl text-secondary-600 max-w-3xl mx-auto"
           >
             {clubInfo.mission}
           </motion.p>
@@ -142,7 +142,7 @@ const About = () => {
             Nuestros Valores
           </motion.h3>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
             {values.map((value, index) => (
               <motion.div
                 key={index}

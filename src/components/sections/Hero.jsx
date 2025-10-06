@@ -65,11 +65,11 @@ const Hero = () => {
   }
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center bg-gradient-to-br from-secondary-50 via-white to-primary-50 overflow-hidden">
+    <section id="home" className="relative min-h-screen flex items-center bg-gradient-to-br from-secondary-50 via-white to-primary-50 overflow-hidden pt-16 md:pt-20 w-full">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-primary-200 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-accent-200 rounded-full blur-3xl"></div>
+        <div className="absolute top-20 left-2 w-32 h-32 sm:w-48 sm:h-48 bg-primary-200 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 right-2 w-40 h-40 sm:w-56 sm:h-56 bg-accent-200 rounded-full blur-3xl"></div>
       </div>
 
       <div className="container-custom relative z-10">
@@ -77,28 +77,28 @@ const Hero = () => {
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          className="grid lg:grid-cols-2 gap-12 items-center"
+          className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12 items-center"
         >
           {/* Content */}
           <div className="text-center lg:text-left">
 
             <motion.h1
               variants={itemVariants}
-              className="text-4xl md:text-6xl lg:text-7xl font-bold text-secondary-800 mb-6 leading-tight"
+              className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold text-secondary-800 mb-4 md:mb-6 leading-tight break-words"
             >
               {clubInfo.name}
             </motion.h1>
 
             <motion.p
               variants={itemVariants}
-              className="text-xl text-secondary-600 mb-8 max-w-2xl"
+              className="text-lg md:text-xl text-secondary-600 mb-6 md:mb-8 max-w-2xl mx-auto lg:mx-0"
             >
               {clubInfo.description}
             </motion.p>
 
             <motion.div
               variants={itemVariants}
-              className="flex flex-col sm:flex-row gap-4 mb-12"
+              className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-8 md:mb-12"
             >
               <button className="btn-primary group" onClick={() => handleNavClick('contact')}>
                 Únete ahora
@@ -111,7 +111,7 @@ const Hero = () => {
             {/* Features */}
             <motion.div
               variants={itemVariants}
-              className="grid grid-cols-1 sm:grid-cols-3 gap-6"
+              className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6"
             >
               {features.map((feature, index) => (
                 <motion.div

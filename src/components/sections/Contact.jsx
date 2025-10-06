@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { Mail, Phone, MapPin, Clock, Send, Heart, Users, BookOpen } from 'lucide-react'
+import { Mail, Phone, MapPin, Clock, Send, Heart, Users, BookOpen, Brain } from 'lucide-react'
 import { useStore } from '../../store/useStore'
 
 const Contact = () => {
@@ -53,26 +53,31 @@ const Contact = () => {
     {
       icon: Clock,
       title: 'Horarios',
-      value: 'Lun - Sab: 8:00am - 12:00pm y 1:00pm - 6:00pm',
-      description: 'Domicilios en jornada contínua.'
+      value: 'Lun - Vie: 8:00am - 12:00pm y 1:00pm - 6:00pm',
+      description: 'Sabado y domingo solo domicilios.'
     }
   ]
 
   const services = [
     {
       icon: Heart,
-      title: 'Asesoría Espiritual',
+      title: 'Acompañamiento espiritual',
       description: 'Acompañamiento espiritual personalizado'
     },
     {
       icon: Users,
-      title: 'Consultoría Nutricional',
+      title: 'Orientación nutricional',
       description: 'Planes personalizados'
     },
     {
       icon: BookOpen,
-      title: 'Sesiones Grupales',
+      title: 'Talleres grupales variados',
       description: 'Talleres y charlas sobre bienestar integral'
+    },
+    {
+      icon: Brain,
+      title: 'Asesorías psicológicas (Proximamente)',
+      description: 'Asesorías psicológicas personalizadas'
     }
   ]
 
@@ -199,13 +204,14 @@ const Contact = () => {
                 </label>
                 <select
                   name="interest"
-                  value={formData.interest}
+                  value={formData.interest || 'default'}
                   onChange={handleChange}
                   className="w-full px-4 py-3 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200"
                 >
-                  <option value="spiritual">Asesoría Espiritual</option>
-                  <option value="nutrition">Consultoría Nutricional</option>
-                  <option value="community">Unirse al Club</option>
+                  <option value="default">Selecciona un servicio</option>
+                  <option value="spiritual">Acompañamiento espiritual</option>
+                  <option value="nutrition">Orientación nutricional</option>
+                  <option value="workshops">Talleres grupales variados</option>
                   <option value="other">Otro</option>
                 </select>
               </div>
@@ -316,7 +322,7 @@ const Contact = () => {
             ¿Listo para Comenzar tu Transformación?
           </h3>
           <p className="text-xl text-secondary-600 mb-8 max-w-2xl mx-auto">
-            No esperes más. Tu bienestar integral está a una llamada de distancia.
+            No esperes más. Tu bienestar integral está a un mensaje de distancia.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a className="btn-primary" href="tel:+573159958279">

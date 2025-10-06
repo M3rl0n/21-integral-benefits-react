@@ -47,7 +47,7 @@ const Header = () => {
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-white/95 backdrop-blur-md shadow-lg' : 'bg-transparent'
         }`}
     >
-      <div className="container-custom">
+      <div className="container-custom px-8">
         <div className="flex items-center justify-between py-3 md:py-4 gap-4">
           {/* Logo */}
           <motion.div

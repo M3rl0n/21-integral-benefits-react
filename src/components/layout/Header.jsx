@@ -19,7 +19,6 @@ const Header = () => {
     { id: 'home', label: 'Inicio', icon: Heart },
     { id: 'about', label: 'Nosotros', icon: Users },
     { id: 'products', label: 'Productos', icon: BookOpen },
-    { id: 'testimonials', label: 'Testimonios', icon: Heart },
     { id: 'contact', label: 'Contacto', icon: Heart }
   ]
 
@@ -54,8 +53,7 @@ const Header = () => {
               <Heart className="w-6 h-6 text-white" />
             </div>
             <div>
-              <h1 className="text-xl font-bold text-secondary-800">Club Integral</h1>
-              <p className="text-xs text-secondary-600">Herbalife</p>
+              <h1 className="text-xl font-bold text-secondary-800">C.E.I</h1>
             </div>
           </motion.div>
 

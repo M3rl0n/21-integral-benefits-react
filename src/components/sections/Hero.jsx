@@ -47,7 +47,7 @@ const Hero = () => {
   }
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center bg-gradient-to-br from-primary-50 via-white to-accent-50 overflow-hidden">
+    <section id="home" className="relative min-h-screen flex items-center bg-gradient-to-br from-secondary-50 via-white to-primary-50 overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-20 left-10 w-72 h-72 bg-primary-200 rounded-full blur-3xl"></div>
@@ -63,13 +63,6 @@ const Hero = () => {
         >
           {/* Content */}
           <div className="text-center lg:text-left">
-            <motion.div
-              variants={itemVariants}
-              className="inline-flex items-center space-x-2 bg-primary-100 text-primary-700 px-4 py-2 rounded-full text-sm font-medium mb-6"
-            >
-              <Star className="w-4 h-4 fill-current" />
-              <span>Transformando vidas desde 2024</span>
-            </motion.div>
 
             <motion.h1
               variants={itemVariants}
@@ -141,37 +134,8 @@ const Hero = () => {
               </div>
 
               {/* Floating Cards */}
-              <motion.div
-                animate={{ y: [0, -10, 0] }}
-                transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
-                className="absolute -top-4 -right-4 bg-white p-4 rounded-xl shadow-lg border border-secondary-200"
-              >
-                <div className="flex items-center space-x-3">
-                  <div className="w-10 h-10 bg-accent-100 rounded-full flex items-center justify-center">
-                    <Users className="w-5 h-5 text-accent-600" />
-                  </div>
-                  <div>
-                    <p className="font-semibold text-secondary-800">500+</p>
-                    <p className="text-xs text-secondary-600">Miembros</p>
-                  </div>
-                </div>
-              </motion.div>
+              
 
-              <motion.div
-                animate={{ y: [0, 10, 0] }}
-                transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
-                className="absolute -bottom-4 -left-4 bg-white p-4 rounded-xl shadow-lg border border-secondary-200"
-              >
-                <div className="flex items-center space-x-3">
-                  <div className="w-10 h-10 bg-primary-100 rounded-full flex items-center justify-center">
-                    <Star className="w-5 h-5 text-primary-600 fill-current" />
-                  </div>
-                  <div>
-                    <p className="font-semibold text-secondary-800">4.9/5</p>
-                    <p className="text-xs text-secondary-600">Calificación</p>
-                  </div>
-                </div>
-              </motion.div>
             </div>
           </motion.div>
         </motion.div>

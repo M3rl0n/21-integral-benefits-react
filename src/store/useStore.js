@@ -12,7 +12,7 @@ export const useStore = create((set, get) => ({
   
   // Datos del club
   clubInfo: {
-    name: 'Club Integral Herbalife',
+    name: 'Club De Enfoque Integral',
     description: 'Transformando vidas a través del bienestar integral: cuerpo, mente y espíritu',
     mission: 'Proporcionar productos de calidad y asesoría espiritual para el desarrollo integral de nuestros miembros',
     vision: 'Ser la comunidad líder en bienestar integral, combinando productos Herbalife con principios cristianos'

@@ -10,13 +10,13 @@ const About = () => {
       icon: Heart,
       title: 'Amor',
       description: 'Amamos a Dios y a nuestro prójimo, sirviendo con compasión y dedicación.',
-      color: 'text-red-500'
+      color: 'text-secondary-500'
     },
     {
       icon: Users,
       title: 'Comunidad',
       description: 'Construimos una familia donde cada miembro es valorado y apoyado.',
-      color: 'text-blue-500'
+      color: 'text-primary-600'
     },
     {
       icon: Target,
@@ -28,12 +28,11 @@ const About = () => {
       icon: Shield,
       title: 'Integridad',
       description: 'Actuamos con honestidad y transparencia en todas nuestras relaciones.',
-      color: 'text-purple-500'
+      color: 'text-spiritual-500'
     }
   ]
 
   const stats = [
-    { number: '500+', label: 'Miembros Activos' },
     { number: '3', label: 'Años de Experiencia' },
     { number: '95%', label: 'Satisfacción' },
     { number: '24/7', label: 'Soporte Espiritual' }

@@ -33,10 +33,10 @@ const Footer = () => {
   }
 
   const socialLinks = [
-    { name: 'Facebook', icon: Facebook, href: '#', color: 'hover:text-blue-600' },
-    { name: 'Instagram', icon: Instagram, href: '#', color: 'hover:text-pink-600' },
-    { name: 'YouTube', icon: Youtube, href: '#', color: 'hover:text-red-600' },
-    { name: 'Twitter', icon: Twitter, href: '#', color: 'hover:text-blue-400' }
+    { name: 'Facebook', icon: Facebook, href: '#', color: 'hover:text-primary-600' },
+    { name: 'Instagram', icon: Instagram, href: '#', color: 'hover:text-secondary-500' },
+    { name: 'YouTube', icon: Youtube, href: '#', color: 'hover:text-spiritual-500' },
+    { name: 'Twitter', icon: Twitter, href: '#', color: 'hover:text-accent-500' }
   ]
 
   const containerVariants = {

@@ -9,19 +9,19 @@ const Products = () => {
     {
       name: 'Control de Peso',
       icon: Heart,
-      color: 'from-red-500 to-pink-500',
+      color: 'from-secondary-400 to-secondary-500', // Rosa suave para cuidado personal
       description: 'Productos para mantener un peso saludable'
     },
     {
       name: 'Bienestar General',
       icon: Shield,
-      color: 'from-blue-500 to-cyan-500',
+      color: 'from-primary-500 to-primary-600', // Verde natural para bienestar
       description: 'Nutrición y suplementos para el bienestar'
     },
     {
       name: 'Deportivo',
       icon: Zap,
-      color: 'from-green-500 to-emerald-500',
+      color: 'from-accent-500 to-spiritual-500', // Verde oliva a rosa tierra para energía
       description: 'Productos para atletas y deportistas'
     }
   ]
@@ -126,7 +126,7 @@ const Products = () => {
               className="bg-white rounded-2xl shadow-lg border border-secondary-100 overflow-hidden hover:shadow-xl transition-all duration-300"
             >
               {/* Product Image Placeholder */}
-              <div className="h-48 bg-gradient-to-br from-primary-200 to-accent-200 flex items-center justify-center">
+              <div className="h-48 bg-gradient-to-br from-secondary-100 to-primary-100 flex items-center justify-center">
                 <div className="text-center">
                   <Heart className="w-16 h-16 text-primary-600 mx-auto mb-2" />
                   <p className="text-sm text-secondary-600">Imagen del Producto</p>

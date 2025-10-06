@@ -34,7 +34,7 @@ const Testimonials = () => {
       className="bg-white p-8 rounded-2xl shadow-lg border border-secondary-100 hover:shadow-xl transition-all duration-300"
     >
       <div className="flex items-center mb-6">
-        <div className="w-12 h-12 bg-gradient-to-br from-primary-500 to-accent-500 rounded-full flex items-center justify-center text-white font-bold text-lg">
+        <div className="w-12 h-12 bg-gradient-to-br from-primary-500 to-secondary-400 rounded-full flex items-center justify-center text-white font-bold text-lg">
           {testimonial.name.charAt(0)}
         </div>
         <div className="ml-4">
@@ -110,7 +110,7 @@ const Testimonials = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
-          className="bg-gradient-to-r from-primary-600 to-accent-600 rounded-2xl p-12 text-white mb-16"
+          className="bg-gradient-to-r from-primary-600 to-secondary-500 rounded-2xl p-12 text-white mb-16"
         >
           <motion.h3
             variants={itemVariants}

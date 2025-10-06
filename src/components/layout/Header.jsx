@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Menu, X, Heart, Users, BookOpen } from 'lucide-react'
+import { Menu, X, Heart, Users } from 'lucide-react'
 import { useStore } from '../../store/useStore'
+import Logo from '../../assets/img/Logo.png'
 
 const Header = () => {
   const { isMenuOpen, toggleMenu, setCurrentSection, currentSection } = useStore()
@@ -16,29 +17,35 @@ const Header = () => {
   }, [])
 
   const navItems = [
-    { id: 'home', label: 'Inicio', icon: Heart },
-    { id: 'about', label: 'Nosotros', icon: Users },
-    { id: 'products', label: 'Productos', icon: BookOpen },
-    { id: 'contact', label: 'Contacto', icon: Heart }
+    { id: 'home', label: 'Inicio', icon: Heart, href: '#home' },
+    { id: 'about', label: 'Nosotros', icon: Users, href: '#about' },
+    { id: 'contact', label: 'Contacto', icon: Heart, href: '#contact' }
   ]
 
   const handleNavClick = (sectionId) => {
     setCurrentSection(sectionId)
     toggleMenu()
-    // Scroll suave a la sección
-    const element = document.getElementById(sectionId)
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' })
-    }
+
+    setTimeout(() => {
+      const element = document.getElementById(sectionId)
+      if (element) {
+        const headerHeight = 80
+        const elementPosition = element.offsetTop - headerHeight
+
+        window.scrollTo({
+          top: elementPosition,
+          behavior: 'smooth'
+        })
+      }
+    }, 100)
   }
 
   return (
     <motion.header
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-white/95 backdrop-blur-md shadow-lg' : 'bg-transparent'
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-white/95 backdrop-blur-md shadow-lg' : 'bg-transparent'
+        }`}
     >
       <div className="container-custom">
         <div className="flex items-center justify-between py-4">
@@ -49,9 +56,8 @@ const Header = () => {
             transition={{ delay: 0.2 }}
             className="flex items-center space-x-2"
           >
-            <div className="w-10 h-10 bg-gradient-to-br from-primary-500 to-accent-500 rounded-lg flex items-center justify-center">
-              <Heart className="w-6 h-6 text-white" />
-            </div>
+            {/* Logo image */}
+            {/* <img src={Logo} alt="Logo" className="w-10 h-10" /> */}
             <div>
               <h1 className="text-xl font-bold text-secondary-800">C.E.I</h1>
             </div>
@@ -66,11 +72,10 @@ const Header = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3 + index * 0.1 }}
                 onClick={() => handleNavClick(item.id)}
-                className={`flex items-center space-x-2 px-4 py-2 rounded-lg transition-all duration-200 ${
-                  currentSection === item.id
-                    ? 'bg-primary-100 text-primary-700'
-                    : 'text-secondary-600 hover:text-primary-600 hover:bg-primary-50'
-                }`}
+                className={`flex items-center space-x-2 px-4 py-2 rounded-lg transition-all duration-200 ${currentSection === item.id
+                  ? 'bg-primary-100 text-primary-700'
+                  : 'text-secondary-600 hover:text-primary-600 hover:bg-primary-50'
+                  }`}
               >
                 <item.icon className="w-4 h-4" />
                 <span className="font-medium">{item.label}</span>
@@ -85,7 +90,7 @@ const Header = () => {
             transition={{ delay: 0.4 }}
             className="hidden md:block"
           >
-            <button className="btn-primary">
+            <button className="btn-primary" onClick={() => handleNavClick('contact')}>
               Únete al Club
             </button>
           </motion.div>
@@ -119,18 +124,17 @@ const Header = () => {
                   <button
                     key={item.id}
                     onClick={() => handleNavClick(item.id)}
-                    className={`flex items-center space-x-3 px-4 py-3 rounded-lg transition-all duration-200 ${
-                      currentSection === item.id
-                        ? 'bg-primary-100 text-primary-700'
-                        : 'text-secondary-600 hover:text-primary-600 hover:bg-primary-50'
-                    }`}
+                    className={`flex items-center space-x-3 px-4 py-3 rounded-lg transition-all duration-200 ${currentSection === item.id
+                      ? 'bg-primary-100 text-primary-700'
+                      : 'text-secondary-600 hover:text-primary-600 hover:bg-primary-50'
+                      }`}
                   >
                     <item.icon className="w-5 h-5" />
                     <span className="font-medium">{item.label}</span>
                   </button>
                 ))}
                 <div className="pt-4">
-                  <button className="btn-primary w-full">
+                  <button className="btn-primary w-full" onClick={() => handleNavClick('contact')}>
                     Únete al Club
                   </button>
                 </div>

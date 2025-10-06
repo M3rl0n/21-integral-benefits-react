@@ -81,7 +81,6 @@ const Footer = () => {
                 </div>
                 <div>
                   <h3 className="text-2xl font-bold">{clubInfo.name}</h3>
-                  <p className="text-secondary-400 text-sm">Herbalife</p>
                 </div>
               </div>
               

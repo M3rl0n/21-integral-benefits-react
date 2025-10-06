@@ -67,7 +67,7 @@ const Contact = () => {
     {
       icon: Users,
       title: 'Consultoría Nutricional',
-      description: 'Planes personalizados con productos Herbalife'
+      description: 'Planes personalizados'
     },
     {
       icon: BookOpen,

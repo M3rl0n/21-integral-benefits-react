@@ -74,9 +74,11 @@ export default {
         }
       },
       fontFamily: {
-        'sans': ['Inter', 'system-ui', 'sans-serif'],
-        'serif': ['Playfair Display', 'serif'],
+        'sans': ['29LT Riwaya', 'Inter', 'system-ui', 'sans-serif'],
+        'serif': ['Scripter', 'Playfair Display', 'serif'],
         'mono': ['JetBrains Mono', 'monospace'],
+        'scripter': ['Scripter', 'serif'],
+        'riwaya': ['29LT Riwaya', 'sans-serif'],
       },
       animation: {
         'fade-in': 'fadeIn 0.5s ease-in-out',

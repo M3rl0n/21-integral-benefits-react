@@ -1,9 +1,10 @@
 import { motion } from 'framer-motion'
-import { ArrowRight, Star, Users, Heart, Shield } from 'lucide-react'
+import { Users, Heart, Shield } from 'lucide-react'
 import { useStore } from '../../store/useStore'
+import HeroImage from '../../assets/img/logo.png'
 
 const Hero = () => {
-  const { clubInfo } = useStore()
+  const { clubInfo, setCurrentSection, toggleMenu } = useStore()
 
   const features = [
     {
@@ -19,7 +20,7 @@ const Hero = () => {
     {
       icon: Shield,
       title: 'Productos de Calidad',
-      description: 'Herbalife con respaldo científico'
+      description: 'Variedad de productos nutricionales'
     }
   ]
 
@@ -44,6 +45,23 @@ const Hero = () => {
         ease: 'easeOut'
       }
     }
+  }
+  const handleNavClick = (sectionId) => {
+    setCurrentSection(sectionId)
+    toggleMenu()
+
+    setTimeout(() => {
+      const element = document.getElementById(sectionId)
+      if (element) {
+        const headerHeight = 80
+        const elementPosition = element.offsetTop - headerHeight
+
+        window.scrollTo({
+          top: elementPosition,
+          behavior: 'smooth'
+        })
+      }
+    }, 100)
   }
 
   return (
@@ -82,12 +100,11 @@ const Hero = () => {
               variants={itemVariants}
               className="flex flex-col sm:flex-row gap-4 mb-12"
             >
-              <button className="btn-primary group">
-                Descubre Más
-                <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+              <button className="btn-primary group" onClick={() => handleNavClick('contact')}>
+                Únete ahora
               </button>
-              <button className="btn-secondary">
-                Ver Productos
+              <button className="btn-secondary" onClick={() => handleNavClick('about')}>
+                Descubre más
               </button>
             </motion.div>
 
@@ -123,13 +140,7 @@ const Hero = () => {
               {/* Placeholder para imagen principal */}
               <div className="w-full h-96 lg:h-[500px] bg-gradient-to-br from-primary-200 to-accent-200 rounded-2xl flex items-center justify-center">
                 <div className="text-center">
-                  <Heart className="w-24 h-24 text-primary-600 mx-auto mb-4" />
-                  <p className="text-lg font-semibold text-secondary-700">
-                    Imagen Principal
-                  </p>
-                  <p className="text-sm text-secondary-600">
-                    Aquí irá la imagen principal del club
-                  </p>
+                  <img src={HeroImage} alt="Hero Image" className="w-full h-full" />
                 </div>
               </div>
 

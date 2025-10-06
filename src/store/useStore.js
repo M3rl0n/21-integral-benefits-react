@@ -38,7 +38,7 @@ export const useStore = create((set, get) => ({
       
       // Enviar a Google Sheets
       const sheetsResult = await submitToGoogleSheets(formData)
-      console.log('Google Sheets:', sheetsResult)
+      // console.log('Google Sheets:', sheetsResult)
       
       if (sheetsResult.success) {
         return { success: true, message: 'Mensaje enviado correctamente a Google Sheets' }

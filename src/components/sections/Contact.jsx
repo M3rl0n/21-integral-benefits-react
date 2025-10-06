@@ -13,6 +13,7 @@ const Contact = () => {
   })
 
   const handleSubmit = async (e) => {
+    debugger
     e.preventDefault()
     const result = await submitContactForm(formData)
     if (result.success) {

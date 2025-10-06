@@ -20,7 +20,7 @@ const Footer = () => {
   }
 
   const socialLinks = [
-    { name: 'Instagram', icon: Instagram, href: '#', color: 'hover:text-secondary-500' },
+    { name: 'Instagram', icon: Instagram, href: 'https://www.instagram.com/clubdeenfoqueintegral/', color: 'hover:text-secondary-500' },
   ]
 
   const containerVariants = {

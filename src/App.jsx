@@ -32,7 +32,7 @@ function App() {
   }, [setCurrentSection])
 
   return (
-    <div className="min-h-screen bg-white overflow-x-hidden">
+    <div className="bg-white">
       <Header />
 
       <main>

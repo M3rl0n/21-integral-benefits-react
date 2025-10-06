@@ -21,7 +21,7 @@ const About = () => {
     {
       icon: Target,
       title: 'Excelencia',
-      description: 'Buscamos la excelencia en todo lo que hacemos, honrando a Dios.',
+      description: 'Buscamos la excelencia en todo lo que hacemos.',
       color: 'text-green-500'
     },
     {

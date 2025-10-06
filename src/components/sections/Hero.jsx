@@ -4,7 +4,7 @@ import { useStore } from '../../store/useStore'
 import HeroImage from '../../assets/img/logo.png'
 
 const Hero = () => {
-  const { clubInfo, setCurrentSection, toggleMenu } = useStore()
+  const { clubInfo, setCurrentSection } = useStore()
 
   const features = [
     {
@@ -20,7 +20,7 @@ const Hero = () => {
     {
       icon: Shield,
       title: 'Productos de Calidad',
-      description: 'Variedad de productos nutricionales'
+      description: 'Variedad de productos nutricionales con una marca mundialmente reconocida.'
     }
   ]
 
@@ -48,7 +48,6 @@ const Hero = () => {
   }
   const handleNavClick = (sectionId) => {
     setCurrentSection(sectionId)
-    toggleMenu()
 
     setTimeout(() => {
       const element = document.getElementById(sectionId)
@@ -143,34 +142,10 @@ const Hero = () => {
                   <img src={HeroImage} alt="Hero Image" className="w-full h-full" />
                 </div>
               </div>
-
-              {/* Floating Cards */}
-              
-
             </div>
           </motion.div>
         </motion.div>
       </div>
-
-      {/* Scroll Indicator */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.5 }}
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
-      >
-        <motion.div
-          animate={{ y: [0, 10, 0] }}
-          transition={{ duration: 2, repeat: Infinity }}
-          className="w-6 h-10 border-2 border-secondary-400 rounded-full flex justify-center"
-        >
-          <motion.div
-            animate={{ y: [0, 12, 0] }}
-            transition={{ duration: 2, repeat: Infinity }}
-            className="w-1 h-3 bg-secondary-400 rounded-full mt-2"
-          />
-        </motion.div>
-      </motion.div>
     </section>
   )
 }

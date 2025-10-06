@@ -32,12 +32,6 @@ const About = () => {
     }
   ]
 
-  const stats = [
-    { number: '3', label: 'Años de Experiencia' },
-    { number: '95%', label: 'Satisfacción' },
-    { number: '24/7', label: 'Soporte Espiritual' }
-  ]
-
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -170,65 +164,6 @@ const About = () => {
           </div>
         </motion.div>
 
-        {/* Stats */}
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
-          className="bg-gradient-to-r from-primary-600 to-accent-600 rounded-2xl p-12 text-white"
-        >
-          <motion.h3
-            variants={itemVariants}
-            className="text-3xl font-bold text-center mb-12"
-          >
-            Nuestro Impacto
-          </motion.h3>
-
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {stats.map((stat, index) => (
-              <motion.div
-                key={index}
-                variants={itemVariants}
-                className="text-center"
-              >
-                <motion.div
-                  initial={{ scale: 0 }}
-                  whileInView={{ scale: 1 }}
-                  transition={{ delay: index * 0.1, duration: 0.5 }}
-                  className="text-4xl md:text-5xl font-bold mb-2"
-                >
-                  {stat.number}
-                </motion.div>
-                <p className="text-lg opacity-90">{stat.label}</p>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
-
-        {/* Call to Action */}
-        <motion.div
-          variants={itemVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
-          className="text-center mt-16"
-        >
-          <h3 className="text-3xl font-bold text-secondary-800 mb-6">
-            ¿Listo para tu Transformación?
-          </h3>
-          <p className="text-xl text-secondary-600 mb-8 max-w-2xl mx-auto">
-            Únete a nuestra comunidad y descubre cómo el bienestar integral puede transformar tu vida.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="btn-primary">
-              Únete Ahora
-            </button>
-            <button className="btn-secondary">
-              Conoce Más
-            </button>
-          </div>
-        </motion.div>
       </div>
     </section>
   )

@@ -10,13 +10,6 @@ const Footer = () => {
       { name: 'Sobre Nosotros', href: '#about' },
       { name: 'Nuestra Misión', href: '#about' },
       { name: 'Valores', href: '#about' },
-      { name: 'Testimonios', href: '#testimonials' }
-    ],
-    products: [
-      { name: 'Control de Peso', href: '#products' },
-      { name: 'Bienestar General', href: '#products' },
-      { name: 'Deportivo', href: '#products' },
-      { name: 'Catálogo Completo', href: '#products' }
     ],
     services: [
       { name: 'Asesoría Espiritual', href: '#contact' },
@@ -109,22 +102,6 @@ const Footer = () => {
               <h4 className="text-lg font-semibold mb-6">El Club</h4>
               <ul className="space-y-3">
                 {footerLinks.club.map((link, index) => (
-                  <li key={index}>
-                    <a
-                      href={link.href}
-                      className="text-secondary-300 hover:text-white transition-colors duration-200"
-                    >
-                      {link.name}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
-
-            <motion.div variants={itemVariants}>
-              <h4 className="text-lg font-semibold mb-6">Productos</h4>
-              <ul className="space-y-3">
-                {footerLinks.products.map((link, index) => (
                   <li key={index}>
                     <a
                       href={link.href}

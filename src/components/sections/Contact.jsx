@@ -10,7 +10,6 @@ const Contact = () => {
     email: '',
     phone: '',
     message: '',
-    interest: 'products'
   })
 
   const handleSubmit = async (e) => {
@@ -18,7 +17,7 @@ const Contact = () => {
     const result = await submitContactForm(formData)
     if (result.success) {
       alert('¡Mensaje enviado correctamente! Te contactaremos pronto.')
-      setFormData({ name: '', email: '', phone: '', message: '', interest: 'products' })
+      setFormData({ name: '', email: '', phone: '', message: '' })
     } else {
       alert('Error al enviar el mensaje. Por favor, inténtalo de nuevo.')
     }
@@ -203,7 +202,6 @@ const Contact = () => {
                   onChange={handleChange}
                   className="w-full px-4 py-3 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200"
                 >
-                  <option value="products">Información sobre Productos</option>
                   <option value="spiritual">Asesoría Espiritual</option>
                   <option value="nutrition">Consultoría Nutricional</option>
                   <option value="community">Unirse al Club</option>

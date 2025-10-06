@@ -2,8 +2,6 @@ import { useEffect } from 'react'
 import Header from './components/layout/Header'
 import Hero from './components/sections/Hero'
 import About from './components/sections/About'
-import Products from './components/sections/Products'
-import Testimonials from './components/sections/Testimonials'
 import Contact from './components/sections/Contact'
 import Footer from './components/layout/Footer'
 import { useStore } from './store/useStore'
@@ -14,7 +12,7 @@ function App() {
   useEffect(() => {
     // Configurar scroll spy para actualizar la sección activa
     const handleScroll = () => {
-      const sections = ['home', 'about', 'products', 'testimonials', 'contact']
+      const sections = ['home', 'about', 'contact']
       const scrollPosition = window.scrollY + 100
 
       for (const section of sections) {
@@ -36,15 +34,13 @@ function App() {
   return (
     <div className="min-h-screen bg-white">
       <Header />
-      
+
       <main>
         <Hero />
         <About />
-        <Products />
-        <Testimonials />
         <Contact />
       </main>
-      
+
       <Footer />
     </div>
   )

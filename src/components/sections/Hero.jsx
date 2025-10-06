@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 import { Users, Heart, Shield } from 'lucide-react'
 import { useStore } from '../../store/useStore'
-import HeroImage from '../../assets/img/logo.png'
+import HeroImage from '../../assets/img/Logo.png'
 
 const Hero = () => {
   const { clubInfo, setCurrentSection, toggleMenu } = useStore()
